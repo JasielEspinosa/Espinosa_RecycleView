@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 
@@ -17,9 +18,9 @@ public class MainActivity extends AppCompatActivity {
     String[] codename, version, api, date;
     ArrayList<AndroidVersion> list;
     CustomAdapter adapter;
-    //RecyclerView.LayoutManager layoutManager;
+    RecyclerView.LayoutManager layoutManager;
     //LinearLayoutManager layoutManager;
-    StaggeredGridLayoutManager layoutManager;
+    //StaggeredGridLayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
         api = getResources().getStringArray(R.array.api);
         date = getResources().getStringArray(R.array.date);
         list = new ArrayList<AndroidVersion>();
-        //layoutManager = new LinearLayoutManager(this);
+        layoutManager = new LinearLayoutManager(this);
         //layoutManager = new GridLayoutManager(this, 2);
-        layoutManager = new StaggeredGridLayoutManager(6, StaggeredGridLayoutManager.HORIZONTAL);
+        //layoutManager = new StaggeredGridLayoutManager(14, StaggeredGridLayoutManager.HORIZONTAL);
         //layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         rvAndroidVersions.setLayoutManager(layoutManager);
         rvAndroidVersions.setHasFixedSize(true);
